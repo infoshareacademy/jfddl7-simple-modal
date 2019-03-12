@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
   <title>Document</title>
 
   <style>
-    html, body {
+    html,
+    body {
       overflow: hidden;
     }
 
@@ -18,9 +20,21 @@
       background-size: cover;
     }
 
-    .modal{}
+    .center-parent {
+      /* keep it on the top to allow overwrite */
+      position: relative;
+    }
 
-    .modal__overlay{
+    .center-child {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .modal {}
+
+    .modal__overlay {
       background-color: rgba(0, 0, 0, 0.5);
       position: fixed;
       left: 0;
@@ -29,9 +43,7 @@
       height: 100vh;
     }
 
-    .modal__window{
-      
-
+    .modal__window {
       background-color: #fff;
       width: 95vw;
       max-width: 600px;
@@ -40,13 +52,15 @@
     }
   </style>
 </head>
+
 <body>
   <div class="modal">
-    <div class="modal__overlay">
-      <div class="modal__window">
+    <div class="modal__overlay center-parent">
+      <div class="modal__window center-child">
 
       </div>
     </div>
   </div>
 </body>
+
 </html>
