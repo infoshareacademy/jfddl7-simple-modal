@@ -32,7 +32,13 @@
       transform: translate(-50%, -50%);
     }
 
-    .modal {}
+    .modal {
+      display: none;
+    }
+
+    .modal--open{
+      display: block;
+    }
 
     .modal__overlay {
       background-color: rgba(0, 0, 0, 0.5);
@@ -54,7 +60,7 @@
 </head>
 
 <body>
-  <div class="modal">
+  <div class="modal modal--open">
     <div class="modal__overlay center-parent">
       <div class="modal__window center-child">
 
