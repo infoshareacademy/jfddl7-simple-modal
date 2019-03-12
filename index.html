@@ -36,7 +36,7 @@
       display: none;
     }
 
-    .modal--open{
+    .modal--open {
       display: block;
     }
 
@@ -60,13 +60,43 @@
 </head>
 
 <body>
-  <div class="modal modal--open">
+  <div class="modal">
     <div class="modal__overlay center-parent">
       <div class="modal__window center-child">
-
+        
       </div>
     </div>
   </div>
+
+  <script>
+    function openModal(e) {
+      e.stopPropagation()
+
+      const modal = document.querySelector('.modal')
+
+      modal.classList.add('modal--open')
+    }
+    function closeModal(e) {
+      e.stopPropagation()
+
+      const modal = document.querySelector('.modal')
+
+      modal.classList.remove('modal--open')
+    }
+
+    const body = document.querySelector('body')
+    const modalOverlay = document.querySelector('.modal__overlay')
+
+    body.addEventListener(
+      'click',
+      openModal
+    )
+
+    modalOverlay.addEventListener(
+      'click',
+      closeModal
+    )
+  </script>
 </body>
 
 </html>
